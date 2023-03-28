@@ -1,0 +1,20 @@
+<div style="background-color: rgb(0, 0, 0);padding: 25px;">
+    <a *ngIf="local.getItem('token')==null" routerLink="login" style="margin-right: 25px; text-decoration: none; color: white;">Login</a>
+    <a *ngIf="local.getItem('token')!=null" (click)="logout()" style="margin-right: 25px; text-decoration: none; color: white;">Logout</a>
+    <a routerLink="display" style="margin-right: 25px; text-decoration: none; color: white;">Display</a>
+    <a routerLink="add" style="margin-right: 25px; text-decoration: none; color: white;">Add</a>
+    <a routerLink="add_Template_driven" style="margin-left: 100px; text-decoration: none; color: white;">Add User by Template Driven</a>
+    <a routerLink="InputOutput" style="margin-left: 100px; text-decoration: none; color: white;">Test Component Interaction</a>
+    <!-- <a routerLink="add_Model_driven" style="margin-left: 100px; text-decoration: none; color: white;">Add User by Model Driven</a> -->
+</div>
+<div>
+    <!-- {{x.xx}}
+    {{x.encryptRailFence()}}<br/>
+    Real Message: {{message}}
+    <br/>
+    Encrypted Message: {{encrypted_message}}
+    <br/>
+    Decrypted Message: {{decrypted_message}}
+    <app-input-output></app-input-output> -->
+</div>
+<router-outlet></router-outlet>

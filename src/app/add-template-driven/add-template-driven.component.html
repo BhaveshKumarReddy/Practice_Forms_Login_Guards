@@ -1,0 +1,34 @@
+<p>Example for template driven forms</p>
+<hr/><br/>
+
+<form #temp_driven="ngForm" (submit)="Submit(temp_driven)">
+
+    <label for="username">Username: </label>
+    <input minlength="4" required type="text" id="username" name="username" ngModel/><br/><br/>
+    <div *ngIf="temp_driven.controls['username'].invalid && temp_driven.controls['username'].touched">
+        <span>Not ok</span>
+    </div>
+
+    <label for="password">Password: </label>
+    <input minlength="6" required type="password" id="password" name="password" ngModel/><br/><br/>
+    <div *ngIf="temp_driven.controls['password'].invalid && temp_driven.controls['password'].touched">
+        <span>Not ok</span>
+    </div>
+
+    <label for="email">Email: </label>
+    <input email required type="email" id="email" name="email" ngModel #em="ngModel"/><br/><br/>
+    <div *ngIf="em.invalid && em.touched">
+        <span>Not ok</span>
+    </div>
+
+    <button [disabled]="!temp_driven.valid">Submit</button>
+
+</form>
+
+<hr/>
+
+<pre>{{em.errors|json}}</pre>
+<pre>Valid : {{temp_driven.valid}} </pre>
+<pre>Touched : {{temp_driven.touched  }} </pre>
+<pre>Submitted : {{temp_driven.submitted  }} </pre>
+<pre>Value : {{temp_driven.value | json }} </pre>

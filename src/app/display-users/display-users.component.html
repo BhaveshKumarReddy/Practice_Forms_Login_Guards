@@ -1,0 +1,8 @@
+<div>
+    <h2>All Users:</h2>
+    <input type="text" [(ngModel)]=inpPipe />
+    <hr/>
+    <div *ngFor="let user of all_users|Namepipe:inpPipe">
+        <p>{{user.username}},{{user.password}}</p>
+    </div>
+</div>

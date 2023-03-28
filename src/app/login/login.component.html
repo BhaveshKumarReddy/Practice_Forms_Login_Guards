@@ -1,0 +1,8 @@
+<form *ngIf="local.getItem('token')==null; else logout">
+    Username: <input style="margin: 20px 0px 10px 0px;" #username type="text" /> <br/>
+    Password: <input style="margin: 10px 0px 20px 0px;" #password type="password" /> <br/>
+    <input style="padding: 7px 20px 7px 20px;" (click)="Login(username.value,password.value)" type="button" value="Login"/>
+</form>
+<ng-template #logout>
+    <input style="padding: 7px 20px 7px 20px;margin: 20px 0px 10px 0px;" (click)="Logout()" type="button" value="Logout"/>
+</ng-template>

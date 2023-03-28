@@ -1,0 +1,6 @@
+<br/>
+<label for="name-io">To Child : </label>
+<input id="name-io" #nameio [(ngModel)]="childValue"/>
+<p>From Child : {{parentValue}}</p>
+<br/>
+<app-child-input-output [childValue]="childValue" (parentEvent)="parentValue=$event" ></app-child-input-output>
